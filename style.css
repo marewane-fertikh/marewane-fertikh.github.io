@@ -110,6 +110,29 @@ details.tech summary {
 }
 details.tech[open] summary { margin-bottom: 0.5rem; }
 
+/* Cartes projets : résumé compact + « Voir les détails » */
+#projets .card { display: flex; flex-direction: column; }
+#projets .card details.more { margin-top: auto; }
+details.more { margin-top: 0.9rem; }
+details.more > summary {
+  cursor: pointer;
+  display: inline-block;
+  color: var(--accent-2);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  border-radius: 8px;
+  list-style: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::before { content: "▸ "; }
+details.more[open] > summary::before { content: "▾ "; }
+details.more > summary:hover { background: rgba(14, 165, 233, 0.12); border-color: var(--accent); }
+details.more[open] > summary { margin-bottom: 0.7rem; }
+details.more > :last-child { margin-bottom: 0; }
+
 /* Largeur de lecture confortable + contraste doux pour le corps de texte */
 .section > p { max-width: 72ch; color: var(--muted); }
 .tl-body { color: var(--muted); }
