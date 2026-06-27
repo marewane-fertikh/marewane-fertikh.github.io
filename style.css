@@ -167,6 +167,8 @@ main { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
   vertical-align: top;
 }
 .comp-table th { background: var(--bg-2); }
+.comp-sub { color: var(--muted); font-weight: 400; font-size: 0.82rem; }
+.ac { color: var(--accent-2); font-size: 0.8rem; white-space: nowrap; }
 
 /* ---------- Contact ---------- */
 .contact-list { list-style: none; display: grid; gap: 0.6rem; }
