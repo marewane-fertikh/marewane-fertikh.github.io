@@ -111,7 +111,7 @@
             <h3>Application de gestion de collection de jeux</h3>
             <p class="meta">SAE S3 · BUT 2 · projet d'équipe</p>
             <p class="tags">PHP · SQL · MVC</p>
-            <p>Application web de gestion d'une importante collection de jeux vidéo (plus de 17 000 références).</p>
+            <p>Application web de gestion et de référencement d'une importante collection de jeux de société (plus de 17 000 références).</p>
             <p><strong>Difficultés :</strong> organisation d'équipe insuffisante, gestion de versions « bricolée » via Google Drive, peu d'expérience du travail collaboratif.</p>
             <p><strong>Ce que j'en retire :</strong> l'importance du versionnement et de l'organisation de projet ; ma première application web conséquente. Projet fonctionnel mais note décevante — point de départ de la refonte du S4.</p>
             <p><strong>Mon rôle :</strong> le travail était organisé collectivement, avec une séparation front-end / back-end, mais les décisions importantes étaient discutées en équipe. Nous avions envisagé CakePHP avant de l'abandonner, faute de le maîtriser dans le temps imparti.</p>
@@ -121,7 +121,7 @@
             <h3>Refonte de l'application de gestion de jeux</h3>
             <p class="meta">SAE S4 · BUT 2 · projet d'équipe</p>
             <p class="tags">PHP · SQL · Git · GitFlow · MVC</p>
-            <p>Refonte complète de l'application du S3. Nous avons choisi de reprendre notre propre projet plutôt que d'auditer celui d'un autre groupe.</p>
+            <p>Refonte presque complète de l'application du S3 : nous sommes repartis de presque zéro sur l'architecture, la base de données, la gestion des versions, la sécurité, l'interface et la documentation. Nous avons choisi de reprendre notre propre projet plutôt que d'auditer celui d'un autre groupe.</p>
             <p><strong>Améliorations :</strong> adoption de Git et du GitFlow, architecture MVC, meilleure organisation d'équipe, qualité de code améliorée.</p>
             <p><strong>Ce que j'en retire :</strong> travail collaboratif, versionnement, architecture logicielle — un projet beaucoup plus propre et abouti. Comment j'ai su rebondir après la déception du S3.</p>
           </article>
@@ -131,7 +131,7 @@
             <p class="meta">SAE · BUT 3 · application mobile</p>
             <p class="tags">React Native · Python · SQLite · MiniLM</p>
             <p>Moteur de recommandation basé sur la recherche sémantique. Travaux : nettoyage du dataset, génération d'embeddings, recherche par similarité cosinus, optimisation des performances.</p>
-            <p><strong>Résultats :</strong> temps d'exécution réduit de 6,1 s à 2 s, mémoire divisée par trois.</p>
+            <p><strong>Résultats constatés lors de mes tests :</strong> temps d'exécution réduit d'environ 6,1 s à 2 s et consommation mémoire divisée par environ trois.</p>
             <p><strong>Mon rôle :</strong> je me suis chargé au départ de l'algorithme. Avant de passer à MiniLM, je voulais écrire un algorithme à la main en tenant compte de la complexité algorithmique (un algorithme vectoriel) ; finalement, la majorité a opté pour la recherche sémantique offerte par MiniLM — c'est là que j'ai dû ravaler mon ego.</p>
           </article>
 
@@ -245,15 +245,15 @@
             <tr>
               <td><strong>Réaliser</strong><br /><span class="comp-sub">Adapter des applications sur un ensemble de supports</span></td>
               <td>Niveau 3</td>
-              <td>Refonte S4 : faire évoluer une application existante, MVC <span class="ac">(AC31.02)</span> · AirAtlas : application mobile React Native <span class="ac">(AC31.01)</span> · Market Factory : intégration en production <span class="ac">(AC31.03)</span> · Collection de jeux</td>
+              <td>Refonte S4 : faire évoluer une application existante, MVC <span class="ac">(AC31.02)</span> · AirAtlas : application mobile React Native <span class="ac">(AC31.01)</span> · Market Factory : module PrestaShop en environnement professionnel, préparation à l'intégration <span class="ac">(AC31.03)</span> · Collection de jeux</td>
               <td>Au S3, nous cherchions surtout une application fonctionnelle, avec peu de méthode et sans vraie gestion de versions. Au S4, nous avons d'abord analysé nos erreurs, puis introduit Git, une organisation plus claire, une structure MVC, une base mieux normalisée, des sessions, des tokens, des validations plus sûres et une meilleure documentation. Ce qui a changé en moi : je ne considère plus qu'un code est terminé simplement parce qu'il fonctionne — et je sais qu'il vaut mieux abandonner tôt une techno mal maîtrisée (comme CakePHP) que livrer une solution fragile.</td>
               <td><strong>Difficulté :</strong> au S3, le manque de méthode et d'organisation a abouti à une application qui ne reflétait pas notre niveau réel.<br /><strong>Progression :</strong> structurer mon code dès le départ et ne pas attendre que tout soit parfait avant d'avoir une base qui tourne.</td>
             </tr>
             <tr>
               <td><strong>Optimiser</strong><br /><span class="comp-sub">Analyser et optimiser des applications</span></td>
               <td>Niveau 3</td>
-              <td>AirAtlas : profilage et optimisation (6,1 s → 2 s, mémoire ÷3), embeddings + similarité cosinus <span class="ac">(AC32.02 / AC32.03)</span> · POC NoSQL : analyse comparative Redis/MongoDB · Market Factory : optimisation d'architecture et de fiabilité (cache local plutôt qu'appel distant, transactions, réduction du couplage)</td>
-              <td>Sur AirAtlas, je devais rendre la recherche sémantique (MiniLM) assez rapide pour rester agréable à l'utilisateur. Après des tests, nous avons réduit le temps d'exécution de 6,1 s à 2 s et divisé la mémoire par trois. J'ai aussi traité la lenteur de démarrage (rechargement de la base, des API…) côté expérience utilisateur, avec une animation de chargement plutôt qu'une page figée.</td>
+              <td>AirAtlas : optimisation mesurée par des tests (≈ 6,1 s → 2 s, mémoire ÷3), recherche sémantique par embeddings + similarité cosinus <span class="ac">(AC32.01 / AC32.03)</span> · POC NoSQL : analyse comparative Redis/MongoDB · Market Factory : optimisation d'architecture et de fiabilité (cache local plutôt qu'appel distant, transactions, réduction du couplage)</td>
+              <td>Sur AirAtlas, je devais rendre la recherche sémantique (MiniLM) assez rapide pour rester agréable à l'utilisateur. Mes tests ont montré une réduction du temps d'exécution d'environ 6,1 s à 2 s et une mémoire divisée par environ trois. J'ai aussi traité la lenteur de démarrage (rechargement de la base, des API…) côté expérience utilisateur, avec une animation de chargement plutôt qu'une page figée.</td>
               <td><strong>Difficulté :</strong> la latence de la recherche sémantique, et un démarrage d'application qui relançait beaucoup de choses (base de données, API).<br /><strong>Progression :</strong> sur le POC NoSQL, on m'a reproché de m'appuyer sur des ressentis sans les chiffrer — j'ai compris qu'il faut mesurer mes choix par des tests plutôt que par une impression, et approfondir le profilage outillé.</td>
             </tr>
             <tr>
