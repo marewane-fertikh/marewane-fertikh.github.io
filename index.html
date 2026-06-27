@@ -139,7 +139,7 @@
             <p><strong>Mon rôle :</strong> je me suis chargé au départ de l'algorithme. Avant MiniLM, je voulais écrire un algorithme vectoriel à la main, en tenant compte de la complexité. Finalement, la majorité a préféré la recherche sémantique de MiniLM. C'est là que j'ai dû ravaler mon ego.</p>
             <figure class="proj-figure">
               <img src="assets/projets/airatlas.jpg" alt="Écran de recommandations de l'application AirAtlas" loading="lazy" />
-              <figcaption>Écran de recommandations d'AirAtlas, avec les scores et les catégories.</figcaption>
+              <figcaption>Écran de recommandations d'AirAtlas, affiché avec un profil de démonstration.</figcaption>
             </figure>
           </article>
 
@@ -179,8 +179,8 @@
         <div class="grid">
           <div class="card">
             <h3>Bilan SAE S5 — AirAtlas</h3>
-            <p>La SAE du S5 est la plus technique que j'aie faite. On a eu une méthode propre dès le départ et une bonne répartition des rôles. On a été l'un des rares groupes à avoir une bonne note. On a utilisé MiniLM pour la recherche sémantique. Comme l'application tournait en local, on a vraiment travaillé l'optimisation et l'usage des API. Ce qui a fait la différence, je crois, c'est qu'on comprenait ce qu'on faisait. On a aussi su le montrer pendant la présentation.</p>
-            <p>Côté humain, on a dû composer avec des personnalités variées. En BUT 2, notre groupe était sans ego. Là, il y avait des caractères plus forts, mais on a su faire avec. J'ai parfois dû ravaler le mien pour le bien du projet. Ça ne m'a pas dérangé, je sais que ça fait partie du métier.</p>
+            <p>La SAE du S5 est la plus technique que j'aie faite. On a eu une méthode propre dès le départ et une bonne répartition des rôles, ce qui nous a valu une bonne note, assez rare dans la promo. On a utilisé MiniLM pour la recherche sémantique, et comme l'application tournait en local, les performances étaient un vrai enjeu. Ce qui a fait la différence, je crois, c'est qu'on comprenait vraiment ce qu'on faisait, et qu'on a su le montrer pendant la présentation.</p>
+            <p>Côté humain, on a dû composer avec des personnalités variées. En BUT 2, notre groupe était sans ego. Là, les caractères étaient plus forts. J'ai appris à accepter une solution collective même quand elle ne correspondait pas à mon idée de départ. Je sais que ça fait partie du métier.</p>
           </div>
           <div class="card">
             <h3>Bilan SAE S6 — IA &amp; introspection</h3>
@@ -202,17 +202,20 @@
 
           <p>J'ai transformé un simple formulaire en un vrai tunnel guidé. Le client s'identifie, avec un pré-remplissage OAuth Google et une autocomplétion d'adresse. Il choisit et personnalise ses produits, couleurs, tailles, quantités, logos et marquage, avec un aperçu. Il termine par un récapitulatif et une soumission, puis la demande est traitée dans le back-office. Le module est organisé en couches, des contrôleurs jusqu'aux templates, en passant par les services, les repositories et les validateurs.</p>
 
-          <p><strong>Réalisations techniques marquantes</strong></p>
-          <ul class="bullets">
-            <li>Écritures SQL rendues <strong>atomiques</strong> (transactions, <code>COMMIT</code>/<code>ROLLBACK</code>) pour éviter les états incohérents.</li>
-            <li><strong>Sécurité des uploads</strong> : types MIME réels (PNG/JPEG/WebP, SVG refusé), noms aléatoires, stockage temporaire puis définitif, nettoyage des abandons par cron.</li>
-            <li><strong>OAuth Google</strong> sécurisé : vérification du <code>state</code> avec <code>hash_equals</code>, cookies dédiés, aucun token ni secret journalisé.</li>
-            <li><strong>Données hétérogènes</strong> : déclinaisons PrestaShop, lecture seule du cache TopTex, repli sur la description, sans dépendance forte entre modules.</li>
-            <li>Passage répété au <strong>PrestaShop Validator</strong> et traitement d'un risque <strong>XSS</strong> (échappement du contenu marqué <code>nofilter</code>).</li>
-            <li>Diagnostic d'une <strong>404 Apache</strong> sur les URL simplifiées, en isolant la chaîne Apache, <code>.htaccess</code>, Dispatcher PrestaShop puis module.</li>
-          </ul>
+          <p>Mes réalisations les plus solides sont les écritures SQL rendues atomiques, une gestion sécurisée des uploads, une connexion OAuth Google sécurisée et le diagnostic d'une erreur 404 Apache. Ma difficulté la plus marquante a été la perte du <code>state</code> OAuth après redirection. Je l'ai réglée avec des cookies dédiés et une vérification stricte du <code>state</code>.</p>
 
-          <p>Plusieurs choses m'ont posé problème. L'environnement Ubuntu était différent de celui du reste de l'équipe. La version de PrestaShop et la base étaient incohérentes au départ. J'ai aussi eu un double préfixe SQL <code>ps_ps_</code>, une perte du <code>state</code> OAuth après redirection, et des produits sans données structurées exploitables.</p>
+          <details class="tech">
+            <summary>Détails techniques</summary>
+            <ul class="bullets">
+              <li>Écritures SQL rendues <strong>atomiques</strong> (transactions, <code>COMMIT</code>/<code>ROLLBACK</code>) pour éviter les états incohérents.</li>
+              <li><strong>Sécurité des uploads</strong> : types MIME réels (PNG/JPEG/WebP, SVG refusé), noms aléatoires, stockage temporaire puis définitif, nettoyage des abandons par cron.</li>
+              <li><strong>OAuth Google</strong> sécurisé : vérification du <code>state</code> avec <code>hash_equals</code>, cookies dédiés, aucun token ni secret journalisé.</li>
+              <li><strong>Données hétérogènes</strong> : déclinaisons PrestaShop, lecture seule du cache TopTex, repli sur la description, sans dépendance forte entre modules.</li>
+              <li>Passage répété au <strong>PrestaShop Validator</strong> et traitement d'un risque <strong>XSS</strong> (échappement du contenu marqué <code>nofilter</code>).</li>
+              <li>Diagnostic d'une <strong>404 Apache</strong> sur les URL simplifiées, en isolant la chaîne Apache, <code>.htaccess</code>, Dispatcher PrestaShop puis module.</li>
+            </ul>
+            <p>Autres difficultés : environnement Ubuntu différent du reste de l'équipe, version et base PrestaShop incohérentes au départ, double préfixe SQL <code>ps_ps_</code>, et des produits sans données structurées exploitables.</p>
+          </details>
 
           <p>J'ai surtout découvert le travail sur un projet professionnel déjà existant. J'ai appris la règle de base, ne pas toucher au cœur du framework. Je me suis inspiré du code d'un autre développeur, le module <code>independentshop</code> d'Adrian. J'échangeais souvent avec l'équipe, je versionnais avec Git et je documentais mes problèmes et mes solutions au quotidien.</p>
 
@@ -221,8 +224,7 @@
 
         <article class="card" style="margin-top:1rem">
           <h3>Une vision du métier — ce que m'a transmis mon maître de stage</h3>
-          <p>Mon maître de stage, Stéphane Pachis, répète une idée depuis mon arrivée. Selon lui, le métier de développeur tel qu'on le connaît va disparaître. Il faut apprendre à devenir des ingénieurs et des architectes logiciels. L'IA doit rester l'outil, l'ouvrier, et nous l'architecte. C'est à nous de la guider pour qu'elle fasse ce qu'on veut, et pas l'inverse. Il insiste donc sur le fait de bien maîtriser cet outil, mais aussi de savoir le corriger et le reprendre. Il dit que l'IA fait chaque jour des dizaines d'erreurs. Il pense même en envoyer à l'IUT comme exemples concrets. D'après lui, beaucoup d'élèves se sous-estiment et pensent que si l'IA n'y arrive pas, ça ne sert à rien d'essayer.</p>
-          <p>Pour moi, c'est l'inverse. Pour reprendre l'IA, il faut justement une large base de connaissances. Notre apprentissage n'est donc pas inutile. Ce sont plutôt les développeurs incomplets qui sont menacés.</p>
+          <p>Mon maître de stage, Stéphane Pachis, défend un point de vue professionnel qui m'a marqué. Pour lui, le métier de développeur va beaucoup évoluer avec l'IA, et il vaut mieux apprendre à raisonner comme un architecte logiciel que comme un simple exécutant. L'IA devient un outil puissant, à condition de savoir la guider et corriger ses erreurs. Ce que j'en retiens, c'est qu'il faut une base technique solide pour piloter ces outils. Les profils qui comprennent mal l'architecture globale risquent davantage de subir les outils d'IA que de les piloter.</p>
         </article>
 
         <article class="card" style="margin-top:1rem">
@@ -258,25 +260,25 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Réaliser</strong><br /><span class="comp-sub">Adapter des applications sur un ensemble de supports</span></td>
-              <td>Niveau 3</td>
-              <td>Refonte S4 : faire évoluer une application existante, MVC <span class="ac">(AC31.02)</span> · AirAtlas : application mobile React Native <span class="ac">(AC31.01)</span> · Market Factory : module PrestaShop en environnement professionnel, préparation à l'intégration <span class="ac">(AC31.03)</span> · Collection de jeux</td>
-              <td>Au S3, on cherchait surtout une application qui marche, avec peu de méthode et sans vraie gestion de versions. Au S4, on a d'abord analysé nos erreurs. On a ensuite mis en place Git, une organisation plus claire, une structure MVC, une base mieux normalisée, des sessions, des tokens, des validations plus sûres et une meilleure documentation. Ce qui a changé en moi, c'est que je ne considère plus qu'un code est fini juste parce qu'il fonctionne. J'ai aussi appris qu'il vaut mieux abandonner tôt une techno mal maîtrisée, comme CakePHP, que livrer une solution fragile.</td>
-              <td><strong>Difficulté :</strong> au S3, le manque de méthode et d'organisation a donné une application qui ne reflétait pas notre niveau réel.<br /><strong>Progression :</strong> structurer mon code dès le départ et ne pas attendre que tout soit parfait avant d'avoir une base qui tourne.</td>
+              <td data-label="Compétence"><strong>Réaliser</strong><br /><span class="comp-sub">Adapter des applications sur un ensemble de supports</span></td>
+              <td data-label="Niveau">Niveau 3</td>
+              <td data-label="Preuves">Refonte S4, faire évoluer une appli existante en MVC <span class="ac">(AC31.02)</span> · AirAtlas, appli mobile React Native <span class="ac">(AC31.01)</span> · module PrestaShop chez Market Factory <span class="ac">(AC31.03)</span></td>
+              <td data-label="Auto-évaluation">C'est la compétence où j'ai le plus progressé, surtout entre le S3 et le S4. Je ne considère plus qu'un code est fini juste parce qu'il fonctionne.</td>
+              <td data-label="Difficultés &amp; progression"><strong>Difficulté :</strong> arriver dans un code que je n'ai pas écrit, comme chez Market Factory.<br /><strong>Objectif :</strong> structurer mon code dès le début et avancer par versions qui fonctionnent.</td>
             </tr>
             <tr>
-              <td><strong>Optimiser</strong><br /><span class="comp-sub">Analyser et optimiser des applications</span></td>
-              <td>Niveau 3</td>
-              <td>AirAtlas : optimisation mesurée par des tests (≈ 6,1 s → 2 s, mémoire ÷3), recherche sémantique par embeddings + similarité cosinus <span class="ac">(AC32.01 / AC32.03)</span> · POC NoSQL : analyse comparative Redis/MongoDB · Market Factory : optimisation d'architecture et de fiabilité (cache local plutôt qu'appel distant, transactions, réduction du couplage)</td>
-              <td>Sur AirAtlas, je devais rendre la recherche sémantique avec MiniLM assez rapide pour rester agréable à utiliser. Mes tests ont montré un temps qui passe d'environ 6,1 s à 2 s et une mémoire divisée par environ trois. J'ai aussi traité la lenteur au démarrage, quand l'application recharge la base et les API. J'ai mis une animation de chargement plutôt qu'une page figée.</td>
-              <td><strong>Difficulté :</strong> la latence de la recherche sémantique, et un démarrage qui relançait beaucoup de choses comme la base et les API.<br /><strong>Progression :</strong> sur le POC NoSQL, on m'a reproché de me fier à des ressentis sans les chiffrer. J'ai compris qu'il faut mesurer mes choix par des tests, et progresser sur le profilage.</td>
+              <td data-label="Compétence"><strong>Optimiser</strong><br /><span class="comp-sub">Analyser et optimiser des applications</span></td>
+              <td data-label="Niveau">Niveau 3</td>
+              <td data-label="Preuves">AirAtlas, optimisation mesurée par des tests, ≈ 6,1 s → 2 s et mémoire ÷3 <span class="ac">(AC32.01 / AC32.03)</span> · POC NoSQL, comparaison Redis/MongoDB</td>
+              <td data-label="Auto-évaluation">Je sais mesurer puis améliorer les performances d'une application sous contrainte, et justifier mes choix. Je dois encore m'outiller sur le profilage.</td>
+              <td data-label="Difficultés &amp; progression"><strong>Difficulté :</strong> la latence de la recherche sémantique et un démarrage lourd.<br /><strong>Objectif :</strong> chiffrer mes choix par des tests plutôt que par un ressenti, comme on me l'a justement reproché sur le POC.</td>
             </tr>
             <tr>
-              <td><strong>Collaborer</strong><br /><span class="comp-sub">Manager une équipe informatique</span></td>
-              <td>Niveau 3</td>
-              <td>SensiNum : chef de groupe, supervision et vue d'ensemble <span class="ac">(AC36.04)</span> · AirAtlas : répartition des rôles, gestion de personnalités fortes · Refonte S4 : organisation d'équipe, GitFlow · Market Factory : intégration dans une équipe pro, revue de code, reporting <span class="ac">(AC26.02/04)</span> · Veille techno/informationnelle <span class="ac">(AC36.01)</span></td>
-              <td>Comme chef de groupe à la Nuit de l'Info, j'ai réparti les rôles. Je donnais mon avis sur le front et le back, avec une vue d'ensemble. J'ai aussi su composer avec des personnalités fortes. Sur AirAtlas, le travail était séparé en pôles, le front, le back et l'algorithme, chacun sur sa branche puis réuni par Pull Requests. Au moment d'intégrer, on a réglé les conflits ensemble en partage d'écran sur Discord. J'ai progressé sur Git, les branches, les PR et l'assemblage de parties développées séparément.</td>
-              <td><strong>Difficulté :</strong> composer avec des ego et des personnalités fortes. J'ai parfois dû ravaler le mien pour le bien du projet.<br /><strong>Progression :</strong> m'affirmer davantage et moins rabaisser mon avis face à celui des autres.</td>
+              <td data-label="Compétence"><strong>Collaborer</strong><br /><span class="comp-sub">Manager une équipe informatique</span></td>
+              <td data-label="Niveau">Niveau 3</td>
+              <td data-label="Preuves">SensiNum, chef de groupe et vue d'ensemble <span class="ac">(AC36.04)</span> · AirAtlas, travail par branches et Pull Requests · veille techno partagée <span class="ac">(AC36.01)</span></td>
+              <td data-label="Auto-évaluation">Comme chef de groupe à la Nuit de l'Info, j'ai réparti les rôles et gardé une vue d'ensemble. Sur AirAtlas, on réglait les conflits d'intégration ensemble, en partage d'écran.</td>
+              <td data-label="Difficultés &amp; progression"><strong>Difficulté :</strong> composer avec des personnalités fortes. J'ai appris à accepter une décision collective même quand elle différait de mon idée.<br /><strong>Objectif :</strong> m'affirmer davantage sans rabaisser mon avis.</td>
             </tr>
           </tbody>
         </table>
@@ -381,5 +383,56 @@
     <footer class="site-footer">
       <p>Portfolio · BUT Informatique, S6 · 2026</p>
     </footer>
+
+    <script>
+      // Bouton retour en haut
+      const toTop = document.createElement("button");
+      toTop.className = "to-top";
+      toTop.setAttribute("aria-label", "Retour en haut de page");
+      toTop.textContent = "↑";
+      document.body.appendChild(toTop);
+      toTop.addEventListener("click", () =>
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      );
+      window.addEventListener("scroll", () =>
+        toTop.classList.toggle("show", window.scrollY > 400)
+      );
+
+      // Agrandissement des captures au clic
+      const lb = document.createElement("div");
+      lb.className = "lightbox";
+      const lbImg = document.createElement("img");
+      lb.appendChild(lbImg);
+      document.body.appendChild(lb);
+      lb.addEventListener("click", () => lb.classList.remove("open"));
+      document.querySelectorAll(".proj-figure img").forEach((img) =>
+        img.addEventListener("click", () => {
+          lbImg.src = img.src;
+          lbImg.alt = img.alt;
+          lb.classList.add("open");
+        })
+      );
+
+      // Navigation : surligne la section active
+      const links = [...document.querySelectorAll(".nav a")];
+      const map = new Map(
+        links.map((a) => [a.getAttribute("href").slice(1), a])
+      );
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              links.forEach((a) => a.classList.remove("active"));
+              const a = map.get(e.target.id);
+              if (a) a.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-45% 0px -50% 0px" }
+      );
+      document
+        .querySelectorAll("main section[id]")
+        .forEach((s) => obs.observe(s));
+    </script>
   </body>
 </html>
