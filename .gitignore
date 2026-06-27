@@ -1,1 +1,6 @@
+# Fichiers sources lourds (on ne pousse que les versions web optimisées)
 assets/DSC_8424.JPG
+assets/projets/*.png
+
+# Documents sensibles à ne jamais publier (noms de tiers, IP internes…)
+assets/projets/Rapport de stage Marewane FERTIKH.pdf
