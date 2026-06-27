@@ -222,7 +222,7 @@
 
         <article class="card" style="margin-top:1rem">
           <h3>Une vision du métier — ce que m'a transmis mon maître de stage</h3>
-          <p>Mon maître de stage, Stéphane, répète une idée depuis mon arrivée : le métier de développeur tel qu'on le connaît va disparaître, et il faut apprendre à devenir des ingénieurs / architectes logiciels. L'IA doit être l'outil — l'ouvrier — et nous l'architecte : c'est à nous de la guider pour qu'elle fasse ce que l'on veut, et pas l'inverse. Il insiste donc sur la nécessité de maîtriser cet outil, mais aussi d'être capable de le corriger et de le reprendre : selon lui, l'IA commet chaque jour des dizaines d'erreurs — au point qu'il envisage d'en envoyer à l'IUT comme exemples concrets, car beaucoup d'élèves se sous-estiment et pensent que si l'IA n'y arrive pas, ce n'est pas la peine d'essayer.</p>
+          <p>Mon maître de stage, Stéphane Pachis, répète une idée depuis mon arrivée : le métier de développeur tel qu'on le connaît va disparaître, et il faut apprendre à devenir des ingénieurs / architectes logiciels. L'IA doit être l'outil — l'ouvrier — et nous l'architecte : c'est à nous de la guider pour qu'elle fasse ce que l'on veut, et pas l'inverse. Il insiste donc sur la nécessité de maîtriser cet outil, mais aussi d'être capable de le corriger et de le reprendre : selon lui, l'IA commet chaque jour des dizaines d'erreurs — au point qu'il envisage d'en envoyer à l'IUT comme exemples concrets, car beaucoup d'élèves se sous-estiment et pensent que si l'IA n'y arrive pas, ce n'est pas la peine d'essayer.</p>
           <p>Pour moi, c'est justement l'inverse : pour être capable de reprendre l'IA, il faut une large base de connaissances. Notre apprentissage n'est donc pas inutile — ce sont les développeurs incomplets qui sont menacés.</p>
         </article>
 
@@ -270,8 +270,8 @@
               <td><strong>Optimiser</strong><br /><span class="comp-sub">Analyser et optimiser des applications</span></td>
               <td>Niveau 3</td>
               <td>AirAtlas : profilage et optimisation (6,1 s → 2 s, mémoire ÷3), embeddings + similarité cosinus <span class="ac">(AC32.02 / AC32.03)</span> · POC NoSQL : analyse comparative Redis/MongoDB · Market Factory : optimisation d'architecture et de fiabilité (cache local plutôt qu'appel distant, transactions, réduction du couplage)</td>
-              <td>Je sais mesurer et améliorer les performances d'une application sous contrainte (exécution en local) et justifier mes choix techniques. <span class="todo">[À enrichir : ce que l'optimisation d'AirAtlas t'a appris concrètement.]</span></td>
-              <td class="todo"><strong>Difficulté :</strong> [À COMPLÉTER : la galère technique principale de l'optimisation d'AirAtlas]<br /><strong>Progression :</strong> approfondir les métriques de performance et le profilage outillé.</td>
+              <td>Sur AirAtlas, je devais rendre la recherche sémantique (MiniLM) assez rapide pour rester agréable à l'utilisateur. Après des tests, nous avons réduit le temps d'exécution de 6,1 s à 2 s et divisé la mémoire par trois. J'ai aussi traité la lenteur de démarrage (rechargement de la base, des API…) côté expérience utilisateur, avec une animation de chargement plutôt qu'une page figée.</td>
+              <td><strong>Difficulté :</strong> la latence de la recherche sémantique, et un démarrage d'application qui relançait beaucoup de choses (base de données, API).<br /><strong>Progression :</strong> sur le POC NoSQL, on m'a reproché de m'appuyer sur des ressentis sans les chiffrer — j'ai compris qu'il faut mesurer mes choix par des tests plutôt que par une impression, et approfondir le profilage outillé.</td>
             </tr>
             <tr>
               <td><strong>Collaborer</strong><br /><span class="comp-sub">Manager une équipe informatique</span></td>
@@ -366,17 +366,7 @@
         </div>
       </section>
 
-      <!-- ============ 11. TÉMOIGNAGES (optionnel, avec accord) ============ -->
-      <section id="temoignages" class="section">
-        <h2>Témoignages</h2>
-        <p class="hint">
-          Uniquement des témoins clairement identifiés et ayant donné leur
-          accord en amont (enseignants IUT, maître d'alternance, tuteur, collègues).
-        </p>
-        <div class="card todo">[Témoignages — seulement si accord obtenu.]</div>
-      </section>
-
-      <!-- ============ 12. CONTACT ============ -->
+      <!-- ============ CONTACT ============ -->
       <section id="contact" class="section">
         <h2>Contact</h2>
         <ul class="contact-list">
