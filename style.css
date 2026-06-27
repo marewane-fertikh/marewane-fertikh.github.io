@@ -98,6 +98,14 @@ main { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
   color: var(--todo);
   font-size: 0.9rem;
 }
+.hero-photo .photo {
+  width: 280px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
 
 /* ---------- Cards / grid ---------- */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
