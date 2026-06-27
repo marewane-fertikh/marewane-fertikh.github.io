@@ -192,24 +192,41 @@
           pratiques, réunions, travail en équipe, gestion des conflits, outils
           mobilisés.
         </p>
-        <div class="grid">
-          <article class="card">
-            <h3>Développeur web — SARL Market Factory</h3>
-            <p class="meta">Expérience professionnelle · BUT 3</p>
-            <p class="tags">PrestaShop · PHP · MySQL · JavaScript · AJAX</p>
-            <p>Projet principal : développement d'un module de génération de devis. Développement backend PHP, manipulation de la base MySQL, intégration dans PrestaShop, travail sur un existant professionnel.</p>
-            <p><strong>Outils :</strong> VS Code, Git, Claude.</p>
-            <p><strong>Impact :</strong> fonctionnalité destinée à être utilisée par des clients réels.</p>
-            <p class="todo"><strong>[À compléter par toi :</strong> bilan personnel + découverte du monde pro (culture d'entreprise, réunions, travail en équipe, gestion des conflits).]</p>
-          </article>
-          <article class="card">
-            <h3>Technicien support &amp; réseau — Mairie de Pantin</h3>
-            <p class="meta">Expérience antérieure</p>
-            <p class="tags">Active Directory · Cisco · Réseau · Linux</p>
-            <p>Support utilisateurs, maintenance de postes, gestion de comptes Active Directory, configuration réseau, manipulation de matériel Cisco, accompagnement d'agents non techniques.</p>
-            <p><strong>Ce que j'en retire :</strong> le fonctionnement d'une DSI, les réseaux d'entreprise, le support informatique, mes premières notions de cyber et d'infrastructure.</p>
-          </article>
-        </div>
+        <article class="card">
+          <h3>Développeur web — SARL Market Factory</h3>
+          <p class="meta">Bilan de stage · BUT 3</p>
+          <p class="tags">PrestaShop · PHP · MySQL · JavaScript / AJAX · Smarty · Git · Apache</p>
+
+          <p><strong>Contexte.</strong> J'ai développé le module PrestaShop <code>marketfactoryquote</code> : permettre à un client de construire progressivement une demande de devis pour des produits personnalisables, pour un public parfois peu familier avec l'informatique. L'enjeu : recueillir des informations fiables et exploitables par l'atelier, sans modifier le cœur de PrestaShop. Encadrement et échanges avec Stéphane, Adrian et les autres stagiaires.</p>
+
+          <p><strong>Ce que j'ai réalisé.</strong> J'ai transformé un simple formulaire en un véritable tunnel guidé : identification du client (avec pré-remplissage OAuth Google et autocomplétion d'adresse), sélection et personnalisation des produits (couleurs/tailles/quantités, bibliothèque et upload de logos, marquage, aperçu généré), récapitulatif, soumission, puis traitement dans le back-office. Le module s'appuie sur une architecture en couches (contrôleurs → services → repositories → validateurs → templates).</p>
+
+          <p><strong>Réalisations techniques marquantes.</strong></p>
+          <ul class="bullets">
+            <li>Écritures SQL rendues <strong>atomiques</strong> (transactions, <code>COMMIT</code>/<code>ROLLBACK</code>) pour éviter les états incohérents.</li>
+            <li><strong>Sécurité des uploads</strong> : types MIME réels (PNG/JPEG/WebP, SVG refusé), noms aléatoires, cycle de vie temporaire → définitif, nettoyage par cron des abandons.</li>
+            <li><strong>OAuth Google</strong> sécurisé : vérification du <code>state</code> avec <code>hash_equals</code>, cookies dédiés, aucun token ni secret journalisé.</li>
+            <li><strong>Données hétérogènes</strong> : déclinaisons PrestaShop, lecture seule du cache TopTex, fallback sur la description — sans créer de dépendance forte entre modules.</li>
+            <li>Passage répété au <strong>PrestaShop Validator</strong> et traitement d'un risque <strong>XSS</strong> (échappement du contenu marqué <code>nofilter</code>).</li>
+            <li>Diagnostic d'une <strong>404 Apache</strong> sur les URL simplifiées en isolant la chaîne Apache → <code>.htaccess</code> → Dispatcher PrestaShop → module.</li>
+          </ul>
+
+          <p><strong>Difficultés.</strong> Environnement Ubuntu différent du reste de l'équipe, version et base PrestaShop incohérentes au départ, double préfixe SQL <code>ps_ps_</code>, perte du <code>state</code> OAuth après redirection, produits sans données structurées exploitables.</p>
+
+          <p><strong>Découverte du monde professionnel.</strong> Travailler sur un existant professionnel et la règle d'or « ne pas modifier le cœur du framework », lire et m'inspirer du code d'un autre développeur (le module <code>independentshop</code> d'Adrian) comme référence, échanger régulièrement, versionner avec Git et documenter quotidiennement mes problèmes et solutions.</p>
+
+          <p class="todo"><strong>[À reformuler avec tes mots — auto-évaluation issue de ton journal] :</strong> « Au début, je voulais rendre une fonctionnalité visible rapidement. Avec PrestaShop, j'ai compris qu'une fonctionnalité peut sembler marcher tout en restant fragile (architecture, sécurité, effets de bord). J'ai appris à prendre du recul avant de modifier le code et à vérifier le parcours complet après chaque changement. » <strong>Limite honnête :</strong> manque de tests automatisés couvrant l'ensemble du tunnel.</p>
+
+          <p class="hint">📸 Traces à ajouter (captures légendées) : tunnel complet, bibliothèque de logos, récapitulatif, schéma d'architecture contrôleur/service/repository, extrait Validator avant/après. <em>Ne pas afficher</em> : secrets OAuth, clés API, tokens, données clients.</p>
+        </article>
+
+        <article class="card" style="margin-top:1rem">
+          <h3>Technicien support &amp; réseau — Mairie de Pantin</h3>
+          <p class="meta">Expérience antérieure</p>
+          <p class="tags">Active Directory · Cisco · Réseau · Linux</p>
+          <p>Support utilisateurs, maintenance de postes, gestion de comptes Active Directory, configuration réseau, manipulation de matériel Cisco, accompagnement d'agents non techniques.</p>
+          <p><strong>Ce que j'en retire :</strong> le fonctionnement d'une DSI, les réseaux d'entreprise, le support informatique, mes premières notions de cyber et d'infrastructure.</p>
+        </article>
       </section>
 
       <!-- ============ 6. COMPÉTENCES (TABLEAU AUTO-ÉVAL) ============ -->
@@ -242,14 +259,14 @@
             <tr>
               <td><strong>Optimiser</strong><br /><span class="comp-sub">Analyser et optimiser des applications</span></td>
               <td>Niveau 3</td>
-              <td>AirAtlas : profilage et optimisation (6,1 s → 2 s, mémoire ÷3), embeddings + similarité cosinus <span class="ac">(AC32.02 / AC32.03)</span> · POC NoSQL : analyse comparative Redis/MongoDB</td>
+              <td>AirAtlas : profilage et optimisation (6,1 s → 2 s, mémoire ÷3), embeddings + similarité cosinus <span class="ac">(AC32.02 / AC32.03)</span> · POC NoSQL : analyse comparative Redis/MongoDB · Market Factory : optimisation d'architecture et de fiabilité (cache local plutôt qu'appel distant, transactions, réduction du couplage)</td>
               <td>Je sais mesurer et améliorer les performances d'une application sous contrainte (exécution en local) et justifier mes choix techniques. <span class="todo">[À enrichir : ce que l'optimisation d'AirAtlas t'a appris concrètement.]</span></td>
               <td class="todo"><strong>Difficulté :</strong> [À COMPLÉTER : la galère technique principale de l'optimisation d'AirAtlas]<br /><strong>Progression :</strong> approfondir les métriques de performance et le profilage outillé.</td>
             </tr>
             <tr>
               <td><strong>Collaborer</strong><br /><span class="comp-sub">Manager une équipe informatique</span></td>
               <td>Niveau 3</td>
-              <td>SensiNum : chef de groupe, supervision et vue d'ensemble <span class="ac">(AC36.04)</span> · AirAtlas : répartition des rôles, gestion de personnalités fortes · Refonte S4 : organisation d'équipe, GitFlow · Veille techno/informationnelle <span class="ac">(AC36.01)</span></td>
+              <td>SensiNum : chef de groupe, supervision et vue d'ensemble <span class="ac">(AC36.04)</span> · AirAtlas : répartition des rôles, gestion de personnalités fortes · Refonte S4 : organisation d'équipe, GitFlow · Market Factory : intégration dans une équipe pro, revue de code, reporting <span class="ac">(AC26.02/04)</span> · Veille techno/informationnelle <span class="ac">(AC36.01)</span></td>
               <td>En tant que chef de groupe à la Nuit de l'Info, j'ai réparti les rôles, donné mon avis sur le front comme sur le back avec une vue d'ensemble, et su composer avec des personnalités fortes. <span class="todo">[À enrichir : un moment précis où ton management a fait la différence.]</span></td>
               <td><strong>Difficulté :</strong> faire avec des ego et des personnalités fortes ; j'ai parfois dû ravaler le mien pour le bien du projet.<br /><strong>Progression :</strong> m'affirmer davantage et moins rabaisser mon avis face à celui des autres.</td>
             </tr>
