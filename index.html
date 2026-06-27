@@ -120,7 +120,7 @@
             <p>Application web de gestion d'une importante collection de jeux vidéo (plus de 17 000 références).</p>
             <p><strong>Difficultés :</strong> organisation d'équipe insuffisante, gestion de versions « bricolée » via Google Drive, peu d'expérience du travail collaboratif.</p>
             <p><strong>Ce que j'en retire :</strong> l'importance du versionnement et de l'organisation de projet ; ma première application web conséquente. Projet fonctionnel mais note décevante — point de départ de la refonte du S4.</p>
-            <p class="todo"><strong>[À compléter par toi :</strong> ton rôle précis + ton degré de maîtrise.]</p>
+            <p><strong>Mon rôle :</strong> le travail était organisé collectivement, avec une séparation front-end / back-end, mais les décisions importantes étaient discutées en équipe. Nous avions envisagé CakePHP avant de l'abandonner, faute de le maîtriser dans le temps imparti.</p>
           </article>
 
           <article class="card">
@@ -215,7 +215,7 @@
 
           <p><strong>Découverte du monde professionnel.</strong> Travailler sur un existant professionnel et la règle d'or « ne pas modifier le cœur du framework », lire et m'inspirer du code d'un autre développeur (le module <code>independentshop</code> d'Adrian) comme référence, échanger régulièrement, versionner avec Git et documenter quotidiennement mes problèmes et solutions.</p>
 
-          <p class="todo"><strong>[À reformuler avec tes mots — auto-évaluation issue de ton journal] :</strong> « Au début, je voulais rendre une fonctionnalité visible rapidement. Avec PrestaShop, j'ai compris qu'une fonctionnalité peut sembler marcher tout en restant fragile (architecture, sécurité, effets de bord). J'ai appris à prendre du recul avant de modifier le code et à vérifier le parcours complet après chaque changement. » <strong>Limite honnête :</strong> manque de tests automatisés couvrant l'ensemble du tunnel.</p>
+          <p><strong>Mon auto-évaluation.</strong> Ce stage m'a appris qu'une fonctionnalité peut fonctionner visuellement tout en restant fragile : dans le module PrestaShop, une simple modification locale pouvait avoir des conséquences sur les redirections, les cookies, les étapes précédentes du tunnel, le récapitulatif, les insertions en base ou les fichiers liés à une demande. J'ai appris à prendre davantage de recul avant de modifier le code et à comprendre le parcours complet des données. J'ai aussi davantage utilisé les logs PrestaShop, les vérifications SQL, le Validator, les sauvegardes, Git et les tests manuels du parcours complet. <strong>Ma limite principale :</strong> le manque de tests automatisés — la majorité des vérifications ont été faites manuellement.</p>
 
           <p class="hint">📸 Traces à ajouter (captures légendées) : tunnel complet, bibliothèque de logos, récapitulatif, schéma d'architecture contrôleur/service/repository, extrait Validator avant/après. <em>Ne pas afficher</em> : secrets OAuth, clés API, tokens, données clients.</p>
         </article>
@@ -263,7 +263,7 @@
               <td><strong>Réaliser</strong><br /><span class="comp-sub">Adapter des applications sur un ensemble de supports</span></td>
               <td>Niveau 3</td>
               <td>Refonte S4 : faire évoluer une application existante, MVC <span class="ac">(AC31.02)</span> · AirAtlas : application mobile React Native <span class="ac">(AC31.01)</span> · Market Factory : intégration en production <span class="ac">(AC31.03)</span> · Collection de jeux</td>
-              <td>Je sais concevoir, coder et faire évoluer une application complète sur différents supports (web, mobile, e-commerce), avec une architecture MVC et de bonnes pratiques. <span class="todo">[À enrichir : raconte en quelques phrases ta progression réelle — ex. la bascule entre le S3 et la refonte du S4.]</span></td>
+              <td>Au S3, nous cherchions surtout une application fonctionnelle, avec peu de méthode et sans vraie gestion de versions. Au S4, nous avons d'abord analysé nos erreurs, puis introduit Git, une organisation plus claire, une structure MVC, une base mieux normalisée, des sessions, des tokens, des validations plus sûres et une meilleure documentation. Ce qui a changé en moi : je ne considère plus qu'un code est terminé simplement parce qu'il fonctionne — et je sais qu'il vaut mieux abandonner tôt une techno mal maîtrisée (comme CakePHP) que livrer une solution fragile.</td>
               <td><strong>Difficulté :</strong> au S3, le manque de méthode et d'organisation a abouti à une application qui ne reflétait pas notre niveau réel.<br /><strong>Progression :</strong> structurer mon code dès le départ et ne pas attendre que tout soit parfait avant d'avoir une base qui tourne.</td>
             </tr>
             <tr>
@@ -277,7 +277,7 @@
               <td><strong>Collaborer</strong><br /><span class="comp-sub">Manager une équipe informatique</span></td>
               <td>Niveau 3</td>
               <td>SensiNum : chef de groupe, supervision et vue d'ensemble <span class="ac">(AC36.04)</span> · AirAtlas : répartition des rôles, gestion de personnalités fortes · Refonte S4 : organisation d'équipe, GitFlow · Market Factory : intégration dans une équipe pro, revue de code, reporting <span class="ac">(AC26.02/04)</span> · Veille techno/informationnelle <span class="ac">(AC36.01)</span></td>
-              <td>En tant que chef de groupe à la Nuit de l'Info, j'ai réparti les rôles, donné mon avis sur le front comme sur le back avec une vue d'ensemble, et su composer avec des personnalités fortes. <span class="todo">[À enrichir : un moment précis où ton management a fait la différence.]</span></td>
+              <td>En tant que chef de groupe à la Nuit de l'Info, j'ai réparti les rôles, donné mon avis sur le front comme sur le back avec une vue d'ensemble, et su composer avec des personnalités fortes. Sur AirAtlas, le travail était réparti en pôles (front, back, algorithme) sur des branches séparées réunies par Pull Requests ; lors de l'intégration, nous avons résolu les conflits collectivement en partage d'écran sur Discord — ce qui m'a fait progresser sur Git, les branches, les PR et l'intégration de parties développées séparément.</td>
               <td><strong>Difficulté :</strong> faire avec des ego et des personnalités fortes ; j'ai parfois dû ravaler le mien pour le bien du projet.<br /><strong>Progression :</strong> m'affirmer davantage et moins rabaisser mon avis face à celui des autres.</td>
             </tr>
           </tbody>
