@@ -15,7 +15,7 @@
 /* Garde-fou : aucune image ne déborde de son conteneur */
 img { max-width: 100%; height: auto; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -37,7 +37,7 @@ body {
   padding: 0.9rem 1.5rem;
   background: rgba(11, 19, 38, 0.7);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 .brand {
   font-weight: 700;
@@ -79,8 +79,10 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
   max-height: 340px;
   height: auto;
   margin: 0 auto;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 .proj-figure figcaption {
   color: var(--muted);
@@ -108,8 +110,9 @@ details.tech summary {
 }
 details.tech[open] summary { margin-bottom: 0.5rem; }
 
-/* Largeur de lecture confortable + plus d'air entre sections */
-.section > p { max-width: 72ch; }
+/* Largeur de lecture confortable + contraste doux pour le corps de texte */
+.section > p { max-width: 72ch; color: var(--muted); }
+.tl-body { color: var(--muted); }
 
 /* Navigation : section active */
 .nav a.active { color: var(--text); border-bottom: 2px solid var(--accent); }
@@ -133,6 +136,7 @@ details.tech[open] summary { margin-bottom: 0.5rem; }
   transition: opacity 0.2s;
 }
 .to-top.show { opacity: 0.9; pointer-events: auto; }
+.to-top:hover { opacity: 1; transform: scale(1.08); border-color: var(--accent); }
 
 /* Lightbox (agrandissement au clic) */
 .lightbox {
@@ -252,8 +256,9 @@ details.tech[open] summary { margin-bottom: 0.5rem; }
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: rgba(14, 165, 233, 0.45);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.15);
 }
 .card h3 { margin-bottom: 0.4rem; font-size: 1.1rem; }
 .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.5rem; }
