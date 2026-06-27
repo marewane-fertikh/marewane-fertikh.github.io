@@ -66,6 +66,7 @@ main { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
   margin-bottom: 1.2rem;
   font-style: italic;
 }
+.section-intro { color: var(--muted); margin-bottom: 1.2rem; }
 
 /* ---------- Hero ---------- */
 .hero {
